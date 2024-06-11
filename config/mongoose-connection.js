@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const config = require('config');                                                               
+
+const config = require('config');   
+                                                            
 const dbgr = require('debug')('development:mongoose');        //to set env var     //set DEBUG=development:*
                                                                //to remove env var  //set DEBUG=
                                                                //for windows set and for mac export

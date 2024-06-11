@@ -6,9 +6,9 @@ const ownerModel = require("../models/owner-model");
 if (process.env.NODE_ENV === "development") {
   router.post("/create", async function (req, res) {
     let owners = await ownerModel.find();
-    if (owners.length > 0) {
+    if (owners.length > 0) {              //only one owner allowed
       return res
-        .status(501)
+        .status(500)
         .send("You dont have permission to create a new owner.");
     }
 
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "development") {
   });
 }
 
-console.log(process.env.NODE_ENV)
+//console.log(process.env.NODE_ENV)  //checking process.env.NODE_ENV
 
 router.get("/", function (req, res) {
   res.send("hey owners");
