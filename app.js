@@ -5,6 +5,7 @@ const path = require('path');
 const ownersRouter = require('./routes/ownersRouter');
 const usersRouter = require('./routes/usersRouter');
 const productsRouter = require('./routes/productsRouter');
+const indexRouter = require('./routes/index');
 const expressSession = require("express-session");
 const flash = require('connect-flash');
 
@@ -25,6 +26,7 @@ app.use(expressSession({
   
 app.use(flash());
 
+app.use("/", indexRouter);
 app.use("/owners", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
