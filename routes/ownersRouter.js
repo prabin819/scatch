@@ -26,8 +26,10 @@ if (process.env.NODE_ENV === "development") {
 
 //console.log(process.env.NODE_ENV)  //checking process.env.NODE_ENV
 
-router.get("/", function (req, res) {
-  res.send("hey owners");
+router.get("/admin", function (req, res) {
+  let success = req.flash("success")
+  res.render("createproducts", {success});
 });
+
 
 module.exports = router;
